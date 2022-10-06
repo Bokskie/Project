@@ -1,0 +1,179 @@
+/*===================MEDIA QUERY===================*/
+@media screen and (max-width: 480px) {
+/*===========CELLPHONE SIZE MEDIA QUERY===============*/
+    
+/*===================SIDE BAR MEDIA QUERY===============*/
+.sidebar
+{
+    width: 160px;
+    height: 100vh;
+}
+.sidebar.active
+{
+    width: 0;
+    transition: all 0.5s ease;
+}
+.sidebar .sidebar-branch img 
+{
+    mix-blend-mode: darken;
+    width: 30px;
+}
+.sidebar .sidebar-branch h2 
+{
+    left: 46px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.sidebar-option a
+{
+    line-height: 3rem;
+    gap: 2.2rem;
+}
+.sidebar-option span 
+{
+    line-height: 3rem;
+    font-size: 20px;
+}
+.sidebar-option h3 
+{
+    font-size: 14px;
+    font-weight: 400;
+}
+/*======================MAIN CONTENT ==================*/
+.main-content
+{
+    left: 160px;
+    width: calc(100% - 161px);
+}
+.main-content .dashboard h1 
+{
+    font-size: 22px;
+    font-weight: 500;
+}
+/*=======================SEARCH BAR===========================*/
+.main-content .dashboard form 
+{  
+    height: 50px;
+    margin-top: 20px;
+    position: relative;
+    left: 10px;
+}
+.main-content .dashboard form, input 
+{
+    top: -4px;
+    width: 1%;
+    margin-left: 4px;
+    transition: all 0.5s ease;
+}
+.main-content .dashboard form button 
+{
+    top: 3px;
+    left: 125px;
+    width: 56px;
+}
+/*=============SEARCH BAR ACTIVE FUNTION===========*/
+.user-search-bar .active 
+{
+    left: 1px;
+    width: calc(20% - -85px);
+    background-color: #ffffff;
+}
+/*======================USER PROFILE======================*/
+.main-content .dashboard .user-profile
+{
+  padding: 10px 5px 3px;
+  margin-top: 10px;
+}
+/* ==================SIDEBAR AND MAIN CONTENT FUNCTION JAVASCRIPT==============*/
+.sidebar.active ~ .main-content
+{
+    left: 0;
+    width: calc(100% - 1px);
+}
+/*======================CENTER CONTENT ======================*/
+.center-content
+{
+    top: 30vh;
+    left: 160px;
+    width: calc(100% - 181px);
+}
+.center-content .items .item
+{
+    padding: 20px;
+    width: 240px;
+    height: 40vh;
+}
+.sidebar.active ~ .center-content
+{
+    left: 30px;
+    width: calc(100% - 61px);
+}
+/*=======================USER ADDRESS=========================*/
+.center-content .user-address
+{
+    width: 80%;
+    padding: 10px;
+    padding-top: 10px;
+}
+.center-content .user-address span 
+{
+    position: relative;
+   
+}
+.center-content .user-address h1 
+{
+    color: #00aa6c;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: sans-serif;
+    padding-bottom: 20px;
+}
+.center-content .user-address input 
+{
+    width: 60%;
+}
+.center-content .user-address button
+{
+    border-radius: 3rem;
+    padding: 8px;
+    background: #00aa6c;
+    cursor: pointer;
+}
+.center-content .user-address input:hover 
+{
+    background: #20ffad;
+}
+/*======================DOWN-CONTENT CELLPHONE SIZE MEDIA QUERY====================*/
+.down-content
+{
+    left: 160px;
+    width: calc(100% - 161px);
+}
+/*====================SIDEBAR ACTIVE TO DOWN CONTENT========================*/
+.sidebar.active ~ .down-content
+{
+    left: 0px;
+    width: calc(100% - 1px);
+}
+.down-content .user-link-option
+{
+    display: flex;
+    flex-direction: column;
+}
+.down-content .user-link-option h2 
+{
+    font-size: 22px;
+    font-weight: 100;
+}
+.down-content .user-link-option a 
+{
+    font-size: 14px;
+}
+/*========================LICENSE============================*/
+.owner-lincense p 
+{
+    padding-bottom: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+}

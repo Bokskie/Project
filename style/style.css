@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+:root 
+{
+  
+    --fds-black-alpha-05: rgba(0, 0, 0, 0.05);
+    --fds-black-alpha-10: rgba(0, 0, 0, 0.1);
+    --fds-black-alpha-15: rgba(0, 0, 0, 0.15);
+    --fds-black-alpha-20: rgba(0, 0, 0, 0.2);
+    --fds-black-alpha-30: rgba(0, 0, 0, 0.3);
+}
+::before::after
+{
+    box-sizing: border-box;
+}
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+
+}
+body 
+{
+    max-width: 100%;
+    height: auto;
+    font-family: sans-serif;
+    background-color: #f2f2f2;
+}
+@media screen and (max-width:480){
+   .down-content
+   {
+       font-size: 10px;
+   }
+}
+/*=============================SIDEBAR===========================*/
+.sidebar
+{
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 210px;
+    height: 100vh;
+    border-radius: 1rem;
+    background: #00aa6c;
+    overflow-x: hidden;
+    transition: all 0.5s ease;
+}
+.sidebar.active
+{
+    width: 60px;
+    transition: all 0.5s ease;
+}
+.sidebar .sidebar-branch
+{
+    display: flex;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+}
+.sidebar .sidebar-branch span
+{
+    color: #ffffffbd;
+}
+.sidebar .sidebar-branch h2 
+{
+    margin-top: 4px;
+    position: absolute;
+    left: 60px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.sidebar .sidebar-branch img 
+{
+    mix-blend-mode: darken;
+}
+/*======================SIDEBAR OPTION========================*/
+.sidebar-option
+{
+    position: relative;
+    top: 40px;
+    left: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.sidebar-option a
+{
+    display: flex;
+    line-height: 4.4rem;
+    gap: 3rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.sidebar-option span 
+{
+    line-height: 4.4rem;
+    position: relative;
+    left: 16px;
+    color: #000000;
+}
+.sidebar-option h3 
+{
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+}
+.sidebar-option .log-out
+{
+    margin-top: 60px;
+}
+.sidebar-option a:hover 
+{
+    background: #ffffff;
+    transition: all 0.9s ease;
+}
+/* =============SIDEBAR AND MAIN CONTENT FUNCTION JAVASCRIPT=========*/
+.sidebar.active ~ .main-content
+{
+    left: 60px;
+    width: calc(100% - 61px);
+}
+/*======================MAIN CONTENT===========================*/
+.main-content
+{
+    background: #464646;
+    position: fixed;
+    display: flex;
+    z-index: 100;
+    left: 211px;
+    height: auto;
+    width: calc(100% - 211px);
+    box-shadow: 1px 1px 2px 1px;
+    transition: all 0.5s ease;
+    overflow-x: hidden;
+}
+/*=======================DASHBOARD=============================*/
+.main-content .dashboard
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    min-width: 90%;
+    top: 0;
+    padding: 10px;
+}
+.main-content .dashboard span 
+{
+    background: #00aa6c;;
+    max-width: 100%;
+    padding: 10px 20px;
+    position: relative;
+    left: 2px;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.main-content .dashboard h1 
+{
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+}
+/*=======================SEARCH BAR===========================*/
+.main-content .dashboard form 
+{
+    border-radius: 3rem;
+    height: 50px;
+    min-width: 90%;
+    margin: auto;
+    position: relative;
+    right: 100px;
+}
+.main-content .dashboard form, input 
+{
+    border: none;
+    border-radius: 3rem;
+    padding: 10px 10px 10px;
+    outline: none;
+    position: relative;
+    top: -4px;
+    width: 10%;
+    background: #464646;
+    margin: auto;
+    transition: all 0.5s ease;
+    
+}
+.main-content .dashboard button 
+{
+    border: none;
+    border-radius: 3rem;
+    position: absolute;
+    top: 3px;
+    left: 15rem;
+    background: #464646;
+}
+/*=============SEARCH BAR ACTIVE FUNTION===========*/
+.main-content .user-search-bar .active 
+{
+    left: 1px;
+    width: calc(100% - -80px);
+    background-color: #ffffff;
+}
+/*==========================USER PROFILE=========================*/
+.main-content .dashboard .user-profile
+{
+  mix-blend-mode: lighten;
+  color: #ffffff;
+  background: #ffffff;
+  border-radius: 3rem;
+  padding: 8px 10px 2px;
+}
+
+/*=============================CENTER-CONTENT======================*/
+.center-content
+{
+    position: relative;
+    left: 211px;
+    top: 120px;
+    width: calc(100% - 211px);
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+.center-content span 
+{
+    color: #00aa6c;
+    transition: all 0.5s ease;
+}
+/*====================SIDEBAR ACTIVE TO USER-CENTER CONTENT===================*/
+.sidebar.active ~ .center-content
+{
+    left: 60px;
+    width: calc(100% - 61px);
+}
+/*=======================USER ADDRESS=========================*/
+.center-content .user-address
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #464646;
+    border-radius: 3rem;
+    width: 60%;
+    padding: 5px;
+    padding-top: 10px;
+}
+.center-content .user-address span 
+{
+    position: relative;
+   
+}
+.center-content .user-address h1 
+{
+    color: #00aa6c;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+.center-content .user-address input 
+{
+    width: 60%;
+}
+.center-content .user-address button
+{
+    border-radius: 3rem;
+    padding: 8px;
+    background: #00aa6c;
+    cursor: pointer;
+}
+.center-content .user-address input:hover 
+{
+    background: #20ffad;
+}
+/*=======================SHOP TITLE CENTER==========================*/
+.center-content .shop-name-title
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.center-content h2
+{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.center-content .shop-name-title h4
+{
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: 100;
+    font-family: sans-serif;
+}
+/*==========================CENTER ITEMS=========================*/
+.center-content .items 
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 2rem;
+    width: 92%;
+    box-sizing: content-box;
+    overflow-x: hidden;
+    padding-bottom: 42px;
+}
+.center-content .items h4
+{
+    color: #000000;
+}
+.center-content .items p
+{
+    position: relative;
+    top: 20px;
+    color: #000000;
+}
+.center-content .items span 
+{
+    position: relative;
+    top: 6px;
+    right: 4px;
+    background: #ffffff;
+    color: rgb(255, 128, 151);
+    border-radius: 3rem;
+    padding: 4px;
+}
+/*===============================ITEMS HOVER=========================*/
+.center-content .items span:hover 
+{
+    background: rgb(255, 0, 0);
+    border-radius: 3rem; 
+}
+.center-content .items img:hover
+{
+    padding: 10px;
+}
+.center-content .items .item:hover
+{
+    top: 10px;
+    position: relative;
+}
+/*=============================IMAGE 1=======================*/
+.center-content .items .item
+{
+    
+    border-radius: 3rem;
+    box-shadow: #464646 6px 10px 2px 4px;
+    border: 2px solid #000000;
+    background: #20ffad;
+    padding: 20px;
+    width: 190px;
+    height: 40vh;
+}
+.center-content .items .item img 
+{
+    border-radius: 3rem;
+    color: #00aa6c;
+    box-shadow: 2px 4px 5px;
+    width: 120px;
+    height: 90px;
+}
+/*===========================DOWN CONTENT========================*/
+.down-content
+{
+    background: #949494;
+    position: relative;
+    left: 211px;
+    top: 200px;
+    width: calc(100% - 211px);
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+/*================SIDEBAR ACTIVE TO DOWN CONTENT=====================*/
+.sidebar.active ~ .down-content
+{
+    left: 61px;
+    width: calc(100% - 68px);
+    transition: all 0.5s ease;
+}
+.down-content .user-link-option
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    overflow-x: hidden;
+}
+.down-content .user-link-option h2 
+{
+    font-family: sans-serif;
+    color: #ffffff;
+    font-size: 24px;
+}
+.down-content .user-link-option a 
+{
+    color: #e4e4e4;
+    font-size: 15px;
+}
+.down-content .user-link-option span 
+{
+    position: relative;
+    top: 5px;
+    color: rgb(5, 211, 5);
+}
+.down-content .user-link-option a:hover 
+{
+    background: #00aa6c;
+    border-radius: 3rem;
+}
+.down-content .user-link-option .our-menu
+{
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+}
+.down-content .user-link-option .our-link
+{
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+}
+/*================================LICENSE===========================*/
+.owner-lincense
+{
+    text-align: center;
+}
+.owner-lincense p 
+{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
